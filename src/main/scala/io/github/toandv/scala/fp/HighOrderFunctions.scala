@@ -23,10 +23,10 @@ object HighOrderFunctions extends App {
   }
 
   // high-order function
-  def reduce(numbers: List[Int])(combiner: ((Int, Int) => Int)): Int = {
+  def reduce(numbers: List[Int])(combine: ((Int, Int) => Int)): Int = {
     var acc: Int = numbers(0)
     for (i <- 1 until numbers.size) {
-      acc = combiner(acc, numbers(i))
+      acc = combine(acc, numbers(i))
     }
     acc
   }
